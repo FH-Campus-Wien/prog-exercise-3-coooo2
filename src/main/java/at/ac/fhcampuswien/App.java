@@ -85,33 +85,11 @@ public class App {
         return Math.abs(a);
     }
 
-    public static String camelCase(String letter){
-        //Task 6 //
-
-        // Extract all words
-        String words[] = letter.split("\\s+");
-
-        StringBuilder sb = new StringBuilder();
-
-        for (String word : words) {
-            char firstChar = word.charAt(0);
-            if (!Character.isUpperCase(firstChar)) {
-                sb.append(Character.toUpperCase(firstChar)).append(word.substring(1));
-            } else
-                sb.append(word.substring(0));
-
-        }
-
-        String result = sb.toString().trim();
-        return result;
-    }
-
     public static int checkDigit(int[] Prüfziffer) {
         //Task 6//
         int sum = 0;
         int Gewichtung = 2;
         int Modello;
-
         for (int i = 0; i < Prüfziffer.length; i++) {
             sum += Prüfziffer[i] * (i + Gewichtung);
         }
