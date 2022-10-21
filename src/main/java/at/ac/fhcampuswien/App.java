@@ -80,7 +80,26 @@ public class App {
         return ran.nextInt(100-1)+1;
     }
 
-   // public static boolean swapArrays()
+    public static boolean swapArrays(int [] array1, int [] array2){
+
+        if (array1.length != array2.length){
+            return false;
+        }
+
+        for(int i = 0 ; i<array1.length;i++){
+            array1[i] = array1[i] - array2[i];
+            array2[i] = array1[i] + array2[i];
+            array1[i] = GetAbsoluteValue(array1[i] - array2[i]);
+        }
+
+        return true;
+    }
+    public static int GetAbsoluteValue (int a){
+        return Math.abs(a);
+
+
+    }
+
 
     public static void main(String[] args) {
         // test your method implementations here
