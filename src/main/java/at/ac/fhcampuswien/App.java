@@ -100,6 +100,29 @@ public class App {
 
     }
 
+    public static int checkDigit(int[] Prüfziffer) {
+        int sum = 0;
+        int Gewichtung = 2;
+        int Modello;
+
+        // Gewichtung berechnen
+        for (int i = 0; i < Prüfziffer.length; i++) {
+            sum += Prüfziffer[i] * (i + Gewichtung);
+        }
+
+
+        Modello = sum % 11;
+
+        int result = 11 - Modello;
+
+        if (result == 11){
+            return 5;
+        } else if (result == 10) {
+            return 0;
+        }
+
+        return result;
+    }
 
     public static void main(String[] args) {
         // test your method implementations here
